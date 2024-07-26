@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>WHOIS Lookup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="m-4 lg:m-6">
+    <h1 class="text-xl mb-3">WHOIS Lookup</h1>
+    <form action="/lookup" method="post" class="flex">
+      <input
+        class="px-2 py-1 rounded border border-zinc-200 focus:border-zinc-300 w-full lg:w-72"
+        placeholder="Domain"
+        id="domain"
+        name="domain"
+        required
+      />
+      <button
+        class="px-2 py-1 rounded bg-zinc-700 text-white hover:bg-zinc-900 focus:outline-none ml-2"
+        type="submit"
+      >
+        Lookup
+      </button>
+    </form>
+
+    <div id="query-message" class="mt-4 text-red-700 hidden">
+      Query submitted, please wait for a few seconds.
+    </div>
+
+    <div id="results">
+      {{ with .WHOISRecord }}
+      <h2 class="mt-4 mb-2">WHOIS Record for {{ .Domain }}</h2>
+      <pre>{{ .Result }}</pre>
+      {{ end }}
+    </div>
+
+    <script>
+      const form = document.querySelector("form");
+      const message = document.getElementById("query-message");
+      const results = document.getElementById("results");
+
+      form.addEventListener("submit", () => {
+        message.classList.remove("hidden");
+        results.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

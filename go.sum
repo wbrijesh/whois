@@ -1,0 +1,4 @@
+github.com/likexian/whois v1.15.4 h1:r5En62c+S9HKFgJtdh2WsdmRGTcxE4WUtGBdZkSBXmM=
+github.com/likexian/whois v1.15.4/go.mod h1:rXFTPcQdNlPQBJCQpPWTSIDGzzmgKBftmhdOOcLpwXk=
+golang.org/x/net v0.27.0 h1:5K3Njcw06/l2y9vpGCSdcxWOYHOUk3dVNGDXN+FvAys=
+golang.org/x/net v0.27.0/go.mod h1:dDi0PyhWNoiUOrAS8uXv/vnScO4wnHQO4mj9fn/RytE=
